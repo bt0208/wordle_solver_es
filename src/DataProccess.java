@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class DataProccess {
     public static void main(String[] args) {
+        int[] frequency = new int[26];
         ArrayList<ArrayList<String>> words = readData();
         writeData(words);
     }
