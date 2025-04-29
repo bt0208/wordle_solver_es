@@ -24,7 +24,17 @@ public class ScoreGenerator {
         }
     }
 
-    public Map<String, Float> getWordScore() {
-        return wordScore;
+    public String getBestWord(String regex){
+        String bestWord = null;
+        float bestScore = 0;
+        for (Map.Entry<String, Float> entry : wordScore.entrySet()) {
+            String word = entry.getKey();
+            float score = entry.getValue();
+            if (word.matches(regex) && score > bestScore) {
+                bestScore = score;
+                bestWord = word;
+            }
+        }
+        return bestWord;
     }
 }
