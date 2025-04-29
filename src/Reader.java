@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Reader {
-    File file;
+    private File file;
     ArrayList<ArrayList<String>> words;
 
     public Reader(String filename) {

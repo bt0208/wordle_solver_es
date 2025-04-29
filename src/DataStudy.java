@@ -1,14 +1,8 @@
 public class DataStudy {
     Reader reader = new Reader("5letters.txt");
-    int[][] frequency = new int[5][27];
-    int totalWords = 0;
-    float[][] frequencyPercentage = new float[5][27];
-
-
-    public static void main(String[] args) {
-        DataStudy ds = new DataStudy();
-        ds.printFrequency();
-    }
+    private int[][] frequency = new int[5][27];
+    private int totalWords = 0;
+    private float[][] frequencyPercentage = new float[5][27];
 
     public DataStudy() {
         frequencyStudy();
@@ -42,5 +36,9 @@ public class DataStudy {
                 System.out.println(Alphabet.getCharFromPosition(j)+ ": " + frequencyPercentage[i][j]);
             }
         }
+    }
+
+    public float[][] getFrequencyPercentage() {
+        return frequencyPercentage;
     }
 }
