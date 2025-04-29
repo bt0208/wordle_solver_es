@@ -14,6 +14,7 @@ public class Reader {
 
     private ArrayList<ArrayList<String>> readWords() {
         ArrayList<ArrayList<String>> words = new ArrayList<>();
+        initialize(words);
         try{
             Scanner input = new Scanner(file);
             while (input.hasNextLine()) {
@@ -26,6 +27,12 @@ public class Reader {
             e.printStackTrace();
         }
         return words;
+    }
+
+    private static void initialize(ArrayList<ArrayList<String>> words){
+        for (int i = 0; i < 26; i++){
+            words.add(new ArrayList<>());
+        }
     }
 
 }
