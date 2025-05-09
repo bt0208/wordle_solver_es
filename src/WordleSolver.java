@@ -20,7 +20,7 @@ public class WordleSolver {
         while (true) {
             System.out.print("Introduce the current state of the word: \n\t-");
             String currentState = in.nextLine();
-            if(currentWord.equals("restart")) {
+            if(currentState.equals("restart")) {
                 absentLetters = "";
                 notHere = new String[]{"", "", "", "", ""};
                 right = new String[5];
@@ -58,6 +58,11 @@ public class WordleSolver {
                 }
             } else {
                 right[i] = String.valueOf(currentChar);
+            }
+        }
+        for (String s : right) {
+            if (s != null) {
+                absentLetters = absentLetters.replace(s, "");
             }
         }
         regex.append("(?!.*[").append(absentLetters).append("])");
